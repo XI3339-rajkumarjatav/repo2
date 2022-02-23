@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-      		git 'https://github.com/XI3339-rajkumarjatav/deploy-progress.git'
+      		git 'https://github.com/XI3339-rajkumarjatav/repo2.git'
             bat 'mvn -B -U -e -V clean -DskipTests package'
       }
     }
@@ -22,7 +22,7 @@ pipeline {
         APP_NAME = 'common-notification-s'
       }
       steps {
-      		git 'https://github.com/XI3339-rajkumarjatav/deploy-progress.git'
+      		git 'https://github.com/XI3339-rajkumarjatav/repo2.git'
             bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="rak_4891" -Danypoint.password="4891@Rajk" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
       }
     }
