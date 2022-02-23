@@ -1,0 +1,87 @@
+#%RAML 1.0
+title: common-notification
+
+
+/createTopic:
+  post:
+    queryParameters:
+      topicName:
+        description: Specific name should provide to create topic.
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/response/create-topic-response.json
+/listTopic:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/response/list-topic-response.json
+/deleteTopic:
+  delete:
+    queryParameters:
+      arn:
+        description: arn should provide to delete topic.
+        type: string
+        required: true    
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+/emailSubscribe:
+  post:
+    queryParameters:
+      arn:
+        description: arn should provide for subscribe.
+        type: string
+        required: true 
+      email:
+        description: email for subscribe.
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/response/email-subscribe-response.json
+/smsSubscribe:
+  post:
+    queryParameters:
+      arn:
+        description: arn should provide for subscribe.
+        type: string
+        required: true 
+      number:
+        description: phone number for subscribe.
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/response/sms-subscribe-response.json
+/publish:
+  post:
+    queryParameters:
+      arn:
+        description: arn should provide for subscribe.
+        type: string
+        required: true 
+      email:
+        description: email for subscribe.
+        type: string
+        required: false
+    body:
+      application/json:
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include /examples/response/publish-response.json
+              
+    
