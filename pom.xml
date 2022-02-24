@@ -3,18 +3,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>1cc27283-6df1-4933-ac7d-64746650b7dd</groupId>
-	<artifactId>payload_transfer</artifactId>
+	<artifactId>payload-transfer-s</artifactId>
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
-	<name>payload_transfer</name>
+	<name>payload-transfer-s</name>
 
 	<description>Auto deployment project</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.4.0-20211227</app.runtime>
+		<app.runtime>4.4.0</app.runtime>
 		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
 		<munit.version>2.3.6</munit.version>
 	</properties>
