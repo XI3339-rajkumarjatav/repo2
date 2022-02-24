@@ -19,10 +19,6 @@ pipeline
     }
     stage('Deploy Sandbox') 
     { 
-      environment 
-      {
-        ANYPOINT_CREDENTIALS = credentials('rak_4891')
-      }
       steps 
       {
         bat 'mvn clean deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username=rak_4891 -Danypoint.password=4891@Rajk'  
