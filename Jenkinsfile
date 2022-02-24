@@ -25,7 +25,7 @@ pipeline
       }
       steps 
       {
-        bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username="rak_4891" -Danypoint.password="4891@Rajk" -Dcloudhub.environment=SANDBOX'  
+        bat 'mvn clean deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username=rak_4891 -Danypoint.password=4891@Rajk'  
       }
     }
   }
