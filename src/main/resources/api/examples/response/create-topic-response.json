@@ -1,4 +1,0 @@
-{
-    "message": "Successfully created topic",
-    "topicArn": "arn:aws:sns:us-east-2:489228445790:OrdersTopic"
-}
