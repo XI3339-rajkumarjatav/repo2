@@ -31,7 +31,7 @@ pipeline
       {
         script 
         {
-                    pom = readMavenPom file: "pom.xml";
+                    pom = readFile file: "pom.xml";
                     filePath = (pom.name + "-" + pom.version + "-" + pom.packaging + ".jar") ;
                     echo "filepath, ${filePath}" ;
                     echo "('target/'+${filePath})" ;
