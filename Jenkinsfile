@@ -15,8 +15,7 @@ pipeline
    stage('SCM-Checkout') {
      steps {
          git branch: 'patch-3', 
-             credentialsId: 'XI3339-rajkumarjatav', 
-             url: 'https://github.com/XI3339-rajkumarjatav/repo2.git'
+         url: 'https://github.com/XI3339-rajkumarjatav/repo2.git'
      }
    }
     stage('Build') 
