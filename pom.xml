@@ -18,7 +18,16 @@
 		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
 		<munit.version>2.3.6</munit.version>
 	</properties>
-
+	<distributionManagement>
+		<snapshotRepository>
+		      <id>nexus-snapshots</id>
+		      <url>http://your-host:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+		      <id>nexus-releases</id>
+		      <url>http://your-host:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>	
 	<build>
 		<plugins>
 			<plugin>
@@ -81,14 +90,6 @@
 		<repository>
 		      <id>maven-group</id>
 		      <url>http://localhost:8081/repository/maven-group/</url>
-		</repository>
-		<snapshotRepository>
-		      <id>nexus-snapshots</id>
-		      <url>http://localhost:8081/repository/maven-snapshots/</url>
-		</snapshotRepository>
-		<repository>
-		      <id>nexus-releases</id>
-		      <url>http://localhost:8081/repository/maven-releases/</url>
 		</repository>
 	</repositories>
 
