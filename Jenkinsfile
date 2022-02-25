@@ -68,14 +68,6 @@ pipeline
             }
         }
 
-    
-    stage('Unit Test') 
-    { 
-      steps 
-      {
-        bat 'mvn clean test'
-      }
-    }
     stage('Deploy Sandbox') 
     { 
       steps 
