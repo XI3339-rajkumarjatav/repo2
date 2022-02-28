@@ -51,19 +51,18 @@ nexusArtifactUploader {
         version('1.0.0')
         repository('maven-releases')
         credentialsId('44620c50-1589-4617-a677-7563985e46e1')
-        artifact {
+        artifacts (
             artifactId('nexus-artifact-uploader')
             type('jar')
             classifier('debug')
             file('nexus-artifact-uploader.jar')
-        }
-        artifact {
+        
             artifactId('nexus-artifact-uploader')
             type('xml')
             classifier('debug')
             file('pom.xml')
-        }
-      };
+       
+      );
  //                     nexusArtifactUploader(
    //                         nexusVersion: NEXUS_VERSION,
      //                       protocol: NEXUS_PROTOCOL,
