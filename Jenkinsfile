@@ -43,27 +43,47 @@ pipeline
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
                        
+nexusArtifactUploader {
+        nexusVersion('nexus3')
+        protocol('http')
+        nexusUrl('localhost:8081/respository')
+        groupId('sp.sd')
+        version('1.0.0')
+        repository('maven-releases')
+        credentialsId('44620c50-1589-4617-a677-7563985e46e1')
+        artifact {
+            artifactId('nexus-artifact-uploader')
+            type('jar')
+            classifier('debug')
+            file('nexus-artifact-uploader.jar')
+        }
+        artifact {
+            artifactId('nexus-artifact-uploader')
+            type('xml')
+            classifier('debug')
+            file('pom.xml')
+        }
+      };
+ //                     nexusArtifactUploader(
+   //                         nexusVersion: NEXUS_VERSION,
+     //                       protocol: NEXUS_PROTOCOL,
+       //                     nexusUrl: NEXUS_URL,
+         //                   groupId: pom.groupId,
+           //                 version: pom.version,
+             //               repository: NEXUS_REPOSITORY,
+               //             credentialsId: NEXUS_CREDENTIAL_ID,
 
-                      nexusArtifactUploader(
-                            nexusVersion: NEXUS_VERSION,
-                            protocol: NEXUS_PROTOCOL,
-                            nexusUrl: NEXUS_URL,
-                            groupId: pom.groupId,
-                            version: pom.version,
-                            repository: NEXUS_REPOSITORY,
-                            credentialsId: NEXUS_CREDENTIAL_ID,
-
-                            artifacts: [
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: artifactPath,
-                                type: ('jar') ],
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: "pom.xml",
-                                type: "pom"]
-                            ]
-                       );
+                 //           artifacts: [
+                   //             [artifactId: pom.artifactId,
+                     //           classifier: '',
+ //                               file: artifactPath,
+   //                             type: ('jar') ],
+     //                           [artifactId: pom.artifactId,
+       //                         classifier: '',
+         //                       file: "pom.xml",
+           //                     type: "pom"]
+             //               ]
+               //        );
                     } else {
                         error "*** File: ${artifactPath}, could not be found";
                     }
