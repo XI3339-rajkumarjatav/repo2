@@ -6,8 +6,8 @@ pipeline
       region= 'us-east-2'
         NEXUS_VERSION = "3.37.3-02"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "http://localhost:8081"
-        NEXUS_REPOSITORY = "/repository/maven-releases"
+        NEXUS_URL = "http://localhost:8081/repository"
+        NEXUS_REPOSITORY = "maven-releases"
         NEXUS_CREDENTIAL_ID = "admin"
   }
   stages 
@@ -50,6 +50,8 @@ pipeline
                             version: pom.version,
                             repository: NEXUS_REPOSITORY,
                             credentialsId: NEXUS_CREDENTIAL_ID,
+                            nexusUser: 'admin',
+                            nexusPassword: 'admin123',
                             artifacts: [
                                 [artifactId: pom.artifactId,
                                 classifier: '',
