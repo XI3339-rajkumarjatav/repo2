@@ -51,13 +51,17 @@ pipeline
                                         version('3.37.3-02')
                                         repository('maven-releases')
                                         credentialsId('Nexus')
-                                        artifact {
-                                            artifactId : 'pom.artifactId',
-                                            type : 'jar',
-                                            classifier : '',
-                                            file: 'artifactPath'
-                                        }
-                                      }
+                          artifacts: [
+                                [artifactId: pom.artifactId,
+                                classifier: '',
+                                file: artifactPath,
+                                type: ('jar') ],
+                                [artifactId: pom.artifactId,
+                                classifier: '',
+                                file: "pom.xml",
+                                type: "pom"]
+                            ]
+                                     }
        //               nexusArtifactUploader(
        //                     nexusVersion: NEXUS_VERSION,
 //                            protocol: NEXUS_PROTOCOL,
