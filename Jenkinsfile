@@ -6,7 +6,7 @@ pipeline
       region= 'us-east-2'
         NEXUS_VERSION = "Nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "localhost:8081/repository"
+        NEXUS_URL = "localhost:8081"
         NEXUS_REPOSITORY = "maven-releases"
         NEXUS_CREDENTIAL_ID = "nexus-credentials"
   }
