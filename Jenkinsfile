@@ -54,11 +54,11 @@ pipeline
                               artifacts = [
                                 [artifactId:pom.artifactId,
                                 classifier: '',
-                                file: artifactPath;
+                                file: artifactPath,
                                 type: ('jar') ];
-                                [artifactId: pom.artifactId;
-                                classifier: '';
-                                file: "pom.xml";
+                                [artifactId: pom.artifactId,
+                                classifier: '',
+                                file: "pom.xml",
                                 type: "pom"]
                             ]
                                      }
