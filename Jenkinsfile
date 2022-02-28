@@ -53,10 +53,10 @@ pipeline
                             credentialsId('Nexus')                      
                               artifacts = [
                                 {
-                                  artifactId:pom.artifactId,
-                                  classifier: '',
-                                  file: artifactPath,
-                                    type: ('jar') }
+                                  artifactId('pom.artifactId')
+                                  classifier('')
+                                  file('artifactPath')
+                                    type('jar') }
                             ]
                                      }
        //               nexusArtifactUploader(
