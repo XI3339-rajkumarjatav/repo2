@@ -52,10 +52,10 @@ pipeline
                                         repository('maven-releases')
                                         credentialsId('Nexus')
                                         artifact {
-                                            artifactId : pom.artifactId,
+                                            artifactId : 'pom.artifactId',
                                             type : 'jar',
                                             classifier : '',
-                                            file: artifactPath
+                                            file: 'artifactPath'
                                         }
                                       }
        //               nexusArtifactUploader(
