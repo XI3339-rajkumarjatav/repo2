@@ -4,11 +4,11 @@ pipeline
   environment{
       workerType = 'MICRO'
       region= 'us-east-2'
-        NEXUS_VERSION = "nexus3"
+        NEXUS_VERSION = "3.37.3-02"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "127.0.0.1:8081"
-        NEXUS_REPOSITORY = "maven-nexus-repo"
-        NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
+        NEXUS_URL = "http://localhost:8081"
+        NEXUS_REPOSITORY = "/repository/maven-releases"
+        NEXUS_CREDENTIAL_ID = "admin"
   }
   stages 
   {
@@ -34,7 +34,7 @@ pipeline
                     pom = readMavenPom file: "pom.xml";
                     filePath = (pom.name + "-" + pom.version + "-" + pom.packaging + ".jar") ;
                     echo "filepath, ${filePath}" ;
-                    echo "('target/'+${filePath})" ;
+                    echo "('target/' + ${filePath})" ;
                     filesByGlob = findFiles(glob: ("target/"+filePath));
                     echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}" ;
                     artifactPath = filesByGlob[0].path;
