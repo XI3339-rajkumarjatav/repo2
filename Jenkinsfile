@@ -44,14 +44,14 @@ pipeline
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
                        
                        nexusArtifactUploader {
-                            nexusVersion: 'Nexus3',
-                            protocol: 'http',
-                            nexusUrl: 'localhost:8081/repository',
-                            groupId: pom.groupId,
-                            version: pom.version,
-                            repository: 'maven-releases',
-                            credentialsId: 'Nexus',                          
-                              artifacts: [
+                            nexusVersion ('Nexus3')
+                            protocol('http')
+                            nexusUrl('localhost:8081/repository')
+                            groupId = pom.groupId,
+                            version = pom.version,
+                            repository = 'maven-releases',
+                            credentialsId = 'Nexus',                          
+                              artifacts = [
                                 [artifactId: pom.artifactId,
                                 classifier: '',
                                 file: artifactPath,
