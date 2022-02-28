@@ -70,8 +70,8 @@
 			      </execution>
 			   </executions>
 			   <configuration>
-			      <serverId>nexus</serverId>
-			      <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+			      <serverId>nexus-releases</serverId>
+			      <nexusUrl>http://localhost:8081/repository/</nexusUrl>
 			      <skipStaging>true</skipStaging>
 			   </configuration>
 			</plugin>
