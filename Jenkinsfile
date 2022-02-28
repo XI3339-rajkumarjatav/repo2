@@ -72,6 +72,14 @@ pipeline
     { 
       steps 
       {
+        echo "mule version ${params.MuleVersion}"
+        echo "environment ${params.Environment}"
+        echo "business group ${params.BusinessGroup}"
+        echo "objectStoreV2 ${params.objectStoreV2}"
+        echo "Application Name ${params.ApplicationName}"
+        echo "Workers Size ${params.WorkersSize}"
+        echo "userid ${cloudhub_USR}"
+        echo "pwd ${cloudhub_PSW}"
         bat 'mvn clean deploy -DmuleDeploy -Dmule.version=4.4.0 -Danypoint.username=rak_4891 -Danypoint.password=4891@Rajk -Danypoint.app=payload-transfer -Danypoint.environment=Sandbox'
       }
     }
