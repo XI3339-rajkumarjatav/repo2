@@ -42,26 +42,42 @@ pipeline
                     echo "artifactPath, ${artifactPath}" ;
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
-                        nexusArtifactUploader(
-                            nexusVersion: NEXUS_VERSION,
-                            protocol: NEXUS_PROTOCOL,
-                            nexusUrl: NEXUS_URL,
-                            groupId: pom.groupId,
-                            version: pom.version,
-                            repository: NEXUS_REPOSITORY,
-                            credentialsId: NEXUS_CREDENTIAL_ID,
-
-                            artifacts: [
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: artifactPath,
-                                type: ('jar') ],
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: "pom.xml",
-                                type: "pom"]
-                            ]
-                        );
+                       
+                       nexusArtifactUploader {
+                                        nexusVersion('nexus23')
+                                        protocol('http')
+                                        nexusUrl('http://localhost:8080/repository')
+                                        groupId('1cc27283-6df1-4933-ac7d-64746650b7dd')
+                                        version('3.37.3-02')
+                                        repository('maven-releases')
+                                        credentialsId('Nexus')
+                                        artifact {
+                                            artifactId : pom.artifactId
+                                            type('jar')
+                                            classifier('debug')
+                                            file: artifactPath
+                                        }
+                                      }
+       //               nexusArtifactUploader(
+       //                     nexusVersion: NEXUS_VERSION,
+//                            protocol: NEXUS_PROTOCOL,
+  //                          nexusUrl: NEXUS_URL,
+    //                        groupId: pom.groupId,
+      //                      version: pom.version,
+        //                    repository: NEXUS_REPOSITORY,
+          //                  credentialsId: NEXUS_CREDENTIAL_ID,
+//
+  //                          artifacts: [
+    //                            [artifactId: pom.artifactId,
+      //                          classifier: '',
+        //                        file: artifactPath,
+          //                      type: ('jar') ],
+            //                    [artifactId: pom.artifactId,
+              //                  classifier: '',
+                //                file: "pom.xml",
+                  //              type: "pom"]
+                    //        ]
+         //               );
                     } else {
                         error "*** File: ${artifactPath}, could not be found";
                     }
