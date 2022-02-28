@@ -47,18 +47,18 @@ pipeline
                             nexusVersion ('Nexus3')
                             protocol('http')
                             nexusUrl('localhost:8081/repository')
-                            groupId = pom.groupId,
-                            version = pom.version,
-                            repository = 'maven-releases',
-                            credentialsId = 'Nexus',                          
+                            groupId = pom.groupId;
+                            version = pom.version;
+                            repository = 'maven-releases';
+                            credentialsId = 'Nexus';                          
                               artifacts = [
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: artifactPath,
-                                type: ('jar') ],
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: "pom.xml",
+                                [artifactId: pom.artifactId;
+                                classifier: '';
+                                file: artifactPath;
+                                type: ('jar') ];
+                                [artifactId: pom.artifactId;
+                                classifier: '';
+                                file: "pom.xml";
                                 type: "pom"]
                             ]
                                      }
