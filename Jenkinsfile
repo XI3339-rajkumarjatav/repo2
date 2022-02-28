@@ -56,12 +56,7 @@ pipeline
                                   artifactId:pom.artifactId,
                                   classifier: '',
                                   file: artifactPath,
-                                    type: ('jar') };
-                                {
-                                  artifactId: pom.artifactId,
-                                  classifier: '',
-                                  file: "pom.xml",
-                                    type: "pom"}
+                                    type: ('jar') }
                             ]
                                      }
        //               nexusArtifactUploader(
