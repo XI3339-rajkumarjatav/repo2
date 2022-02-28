@@ -4,11 +4,11 @@ pipeline
   environment{
       workerType = 'MICRO'
       region= 'us-east-2'
-        NEXUS_VERSION = "3.37.3-02"
+        NEXUS_VERSION = "Nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "http://localhost:8081/repository"
+        NEXUS_URL = "localhost:8081/repository"
         NEXUS_REPOSITORY = "maven-releases"
-        NEXUS_CREDENTIAL_ID = "admin"
+        NEXUS_CREDENTIAL_ID = "Nexus"
   }
   stages 
   {
@@ -44,14 +44,14 @@ pipeline
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
                        
                        nexusArtifactUploader {
-                                        nexusVersion('nexus23')
-                                        protocol('http')
-                                        nexusUrl('http://localhost:8080/repository')
-                                        groupId('1cc27283-6df1-4933-ac7d-64746650b7dd')
-                                        version('3.37.3-02')
-                                        repository('maven-releases')
-                                        credentialsId('Nexus')
-                          artifacts: [
+                            nexusVersion: NEXUS_VERSION,
+                            protocol: NEXUS_PROTOCOL,
+                            nexusUrl: NEXUS_URL,
+                            groupId: pom.groupId,
+                            version: pom.version,
+                            repository: NEXUS_REPOSITORY,
+                            credentialsId: NEXUS_CREDENTIAL_ID,                          
+                              artifacts: [
                                 [artifactId: pom.artifactId,
                                 classifier: '',
                                 file: artifactPath,
