@@ -108,7 +108,7 @@
 		</repository>
 		<repository>
 		      <id>maven-group</id>
-		      <url>http://localhost:8081/repository/maven-group/</url>
+		      <url>http://localhost:8081/repository/maven-releases/</url>
 		</repository>
 	</repositories>
 
