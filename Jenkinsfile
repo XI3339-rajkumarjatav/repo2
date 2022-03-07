@@ -14,7 +14,7 @@ pipeline
   {
    stage('SCM-Checkout') {
      steps {
-         git branch: 'patch-3', 
+         git branch: 'DEV', 
          url: 'https://github.com/XI3339-rajkumarjatav/repo2.git'
      }
    }
