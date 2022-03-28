@@ -73,7 +73,7 @@ pipeline
     { 
       steps 
       {
-       bat 'mvn clean deploy -DmuleDeploy -Dmule.version=4.4.0 -Danypoint.username=xebia_123 -Danypoint.password=4891@Rajk -Danypoint.app=payload-transfer -Danypoint.environment=Sandbox'
+       bat 'mvn clean deploy -DmuleDeploy -Dmule.version=4.4.0 -Danypoint.username=xebia_123 -Danypoint.password=4891@Rajk -Danypoint.app=payloadtransfer-s -Danypoint.environment=Sandbox'
       }
     }
   }
