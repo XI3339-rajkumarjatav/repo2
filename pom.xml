@@ -4,7 +4,7 @@
 
 	<groupId>1cc27283-6df1-4933-ac7d-64746650b7dd</groupId>
 	<artifactId>payload-transfer-s</artifactId>
-	<version>1.0.5</version>
+	<version>1.0.7</version>
 	<packaging>mule-application</packaging>
 
 	<name>payload-transfer-s</name>
